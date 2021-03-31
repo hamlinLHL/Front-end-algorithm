@@ -1,40 +1,6 @@
-class NodeList {
-    val;
-    next;
-    constructor(val, next = null) {
-        this.val = val;
-        this.next = next;
-    }
-}
-class DoublyNodeList {
-    val;
-    next;
-    pre;
-    constructor(val, pre = null, next = null) {
-        this.val = val;
-        this.pre = pre;
-        this.next = next;
-    }
-}
-function consoleList(root) {
-    let res = '';
-    while (root) {
-        res += `${root.val} -> `;
-        root = root.next;
-    }
-    res += 'null';
-    console.log(res);
-}
-function genList(n) {
-    const dummy = new NodeList(0, new NodeList(n, null));
-    let head = dummy.next;
-    while (n > 0) {
-        n--;
-        head.next = new NodeList(n);
-        head = head.next;
-    }
-    return dummy.next;
-}
+const {NodeList, DoublyNodeList, consoleList, genList} = require('./linkedNode');
+
+
 const linkList  = genList(4);
 // consoleList(linkList)
 class LRUCache {
